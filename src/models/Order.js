@@ -33,6 +33,13 @@ const OrderSchema = new db.Schema({
   paymentMethod: {
     type: String
   },
+  payback: {
+    type: Number
+  },
+  delivery: {
+    type: Number,
+    require: true
+  },
   total: {
     type: Number,
     require: true
