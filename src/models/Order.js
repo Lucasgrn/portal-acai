@@ -7,7 +7,8 @@ const OrderSchema = new db.Schema({
   },
   status: {
     type: String,
-    enum: ['Aceito', 'Em preparação', 'Saiu para entrega', 'Concluído']
+    default: 'Pedido Realizado',
+    enum: ['Pedido Realizado', 'Em preparação', 'Saiu para entrega', 'Concluído', 'Cancelado']
   },
   items: [{
     item: {
@@ -26,6 +27,9 @@ const OrderSchema = new db.Schema({
       default: 1
     }
   }],
+  obs: {
+    type: String
+  },
   paymentMethod: {
     type: String
   },
